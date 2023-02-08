@@ -1,12 +1,8 @@
-.image {
-    
-max-width: 100%;
-max-width: 100%;
-background-image: url(../images/fridge.jpg);
-background-repeat: no-repeat;
-}
-
-img {
-max-width: 100%;
-max-width: 100%;
-}
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url('../fridge.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  

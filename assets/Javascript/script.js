@@ -1,4 +1,9 @@
-function reciepe() {
+
+
+var hello = "Hello";
+
+console.log(hello);
+
     const settings = {
         "async": true,
         "crossDomain": true,
@@ -14,14 +19,5 @@ function reciepe() {
         console.log(response);
 
 
-
-
-
-
-
-
-
-
-        
     });
-};
+
