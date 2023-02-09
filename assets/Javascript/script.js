@@ -1,8 +1,5 @@
 
-
-var hello = "Hello";
-
-console.log(hello);
+function recipe() {
 
     const settings = {
         "async": true,
@@ -21,3 +18,39 @@ console.log(hello);
 
     });
 
+/*     for (var i = 0; i <= 3; i ++) {
+        var reciepe = moment.unix(forecastData.list[i].dt).format("DD/MM/YYYY");
+        var temp = (forecastData.list[i].main.temp - 273.15).toFixed(1);
+        var wind = forecastData.list[i].wind.speed;
+        var humidity = forecastData.list[i].main.humidity;
+        var icon = forecastData.list[i].weather[0].icon;
+
+    $("<div>").addClass("card mt-0")
+    .append($("<h5>").addClass("date").text(recipe))
+    .append($("<img>").addClass("icon").attr("src", "https://openweathermap.org/img/wn/" + icon + "@2x.png"))
+    .append($("<h6>").addClass("h6").text("Temp: " + temp + "°C"))
+    .append($("<h6>").addClass("h6").text("Wind: " + wind + "KPH"))
+    .append($("<h6>").addClass("h6").text("Humidity: " + humidity + "%"))
+    .appendTo(forecastEl);
+    }
+        
+}; */
+
+}
+
+var colours = ['pink', 'blue', 'yellow', 'red', 'green', 'cyan', 'orange', 'magenta', 'purple', 'brown'];
+
+      function randomColour() {
+        return colours[Math.floor(Math.random() * colours.length)];
+      }
+
+      var header = document.getElementById("header");
+      var title = header.innerHTML;
+      var colouredTitle = "";
+
+      for (var i = 0; i < title.length; i++) {
+        var colour = randomColour();
+        colouredTitle += "<span style='color: " + colour + ";'>" + title[i] + "</span>";
+      }
+
+      header.innerHTML = colouredTitle;
