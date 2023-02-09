@@ -1,3 +1,5 @@
+
+
 body {
     width: 100%;
     height: 100%;
@@ -5,4 +7,44 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
+
+.header-1 {
+   
+    text-align: center;
+    margin-top: 90px;
+    font-size: 55px;
+    letter-spacing: 3px;
+    font-family: Arial Rounded MT Bold;
+
+}
+
+.form-input {
+    width: 100% !important;
+    text-align: center;
+    margin-top: 48px;
+    padding: 35px;
+    font-size: 35px;
+    letter-spacing: 3px;
+    font-family: Arial Rounded MT Bold;
+    border: 4px solid rgb(100, 97, 97);
+    justify-content: center;
+
+
+}
+
+.form {
+    width: 60.5% !important;
+}
+
+.container {
+    border: 1px solid red;
+    justify-content: center;
+
+}
+
+.row {
+    border: 1px solid red;
+    justify-content: center;
+
+}
