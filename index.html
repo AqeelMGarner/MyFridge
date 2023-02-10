@@ -5,31 +5,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> 
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/CSS/style.css">
     <title>What's In My Fridge?</title>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="row justify-content-md-center">
 
-          <div id="header" class="header-1 col-lg-7">
-            What's in my Fridge?
-          </div>
-    
-        
-      </div>
+        <div class="row justify-content-md-center" style="min-height: 200px;">
 
-  
+            <div id="header" class="header-1 col-lg-7">
+                What's in my Fridge?
+            </div>
+
+        </div>
 
 
+        <div class="row justify-content-md-center" style="min-height: 150px;">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="./Javascript/script.js"></script>
+            <div id="header" class="header-1 col-lg-7">
+
+            </div>
+
+        </div>
+
+        <div class="container" id="card-container">
+            <div class="row">
+
+                <div class="col-sm">
+                    <div class="flip-card" id="recipe1">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h1 class="recipeTitle" id="recipe1">Recipe Title</h1>
+                                <img src="" alt="image of recipe" class="imageRecipe" style="min-width:fit-content;">
+                                <p class="Nutrition"> Nutrition</p>
+                            </div>
+                            <div class="flip-card-back" id="recipe1">
+                                <h2 id="recipe1">Ingredients</h2>
+                                <p class="ingredients" id="recipe1"></p>
+                                <h2 id="recipe1">Method</h2>
+                                <p class="method" id="recipe1"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="flip-card" id="recipe2">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h1 class="recipeTitle" id="recipe2">Recipe Title</h1>
+                                <img src="" alt="image of recipe" class="imageRecipe" style="min-width:fit-content;">
+                                <p class="Nutrition"> Nutrition</p>
+                            </div>
+                            <div class="flip-card-back" id="recipe2">
+                                <h2 id="recipe2">Ingredients</h2>
+                                <p class="ingredients" id="recipe2"></p>
+                                <h2 id="recipe2">Method</h2>
+                                <p class="method" id="recipe2"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="flip-card" id="recipe3">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h1 class="recipeTitle" id="recipe3">Recipe Title</h1>
+                                <img src="" alt="image of recipe" class="imageRecipe" style="min-width:fit-content;">
+                                <p class="Nutrition"> Nutrition</p>
+                            </div>
+                            <div class="flip-card-back" id="recipe3">
+                                <h2 id="recipe3">Ingredients</h2>
+                                <p class="ingredients" id="recipe3"></p>
+                                <h2 id="recipe3">Method</h2>
+                                <p class="method" id="recipe3"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/Javascript/script.js"></script>
 </body>
 
 </html>
