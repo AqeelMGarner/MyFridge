@@ -9,8 +9,9 @@ body {
 .header-1 {
 
     text-align: center;
-    margin-top: 90px;
-    font-size: 3.7vw;
+    margin-top: 80px;
+    padding-bottom: 2%;
+    font-size: 45px;
     letter-spacing: 3px;
     font-family: Arial Rounded MT Bold;
 }
@@ -47,6 +48,8 @@ body {
     border: 1px solid red;
     justify-content: center;
 }
+
+
 
 h1 {
     font-family: Arial Rounded MT Bold;
