@@ -67,7 +67,3 @@ for (var i = 0; i < title.length; i++) {
 }
 
 header.innerHTML = colouredTitle;
-/*
-var card = document.getElementById("card");
-document.createElementn60h6yht("<div>").addClass("card mt-0 col-lg-3");
-document.appendTo(card);*/
