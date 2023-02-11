@@ -9,9 +9,8 @@ body {
 .header-1 {
 
     text-align: center;
-    margin-top: 80px;
-    padding-bottom: 2%;
-    font-size: 45px;
+    margin-top: 90px;
+    font-size: 3.7vw;
     letter-spacing: 3px;
     font-family: Arial Rounded MT Bold;
 }
@@ -69,11 +68,6 @@ h2 {
     font-size: medium;
 }
 
-.imageRecipe {
-    width: 100%;
-    height: 75%;
-}
-
 p {
     height: 25%
 }
@@ -84,18 +78,28 @@ p {
     color: silver;
 }
 
-#recipe1 {
-    color: rgb(209, 129, 206)
+#recipeOne {
+    color: rgb(209, 129, 206);
+    font-size: 16px;
 }
 
-#recipe2 {
-    color: cornflowerblue
+#recipeTwo {
+    color: cornflowerblue;
+    font-size: 16px;
+
 }
 
-#recipe3 {
-    color: rgb(236, 225, 75)
+#recipeThree {
+    color: rgb(236, 225, 75);
+    font-size: 16px;
+
+
 }
 
+.imageRecipe {
+    width: 100%;
+
+}
 
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
