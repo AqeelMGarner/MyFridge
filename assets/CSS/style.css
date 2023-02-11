@@ -32,7 +32,7 @@ body {
 }
 
 .container {
-    border: 1px solid red;
+    border: 1px solid rgb(45, 144, 169);
     justify-content: center;
 
 
@@ -47,6 +47,8 @@ body {
     border: 1px solid red;
     justify-content: center;
 }
+
+
 
 h1 {
     font-family: Arial Rounded MT Bold;
@@ -66,13 +68,11 @@ h2 {
     font-size: medium;
 }
 
-
-
 p {
     height: 25%
 }
 
-.Nutrition {
+.nutrition {
     padding: 10%;
     height: 25%;
     color: silver;
@@ -92,6 +92,7 @@ p {
 #recipeThree {
     color: rgb(236, 225, 75);
     font-size: 16px;
+
 
 }
 
