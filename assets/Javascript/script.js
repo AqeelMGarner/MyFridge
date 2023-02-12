@@ -101,7 +101,7 @@ $.ajax({
 
 
 
-var colours = ['pink', 'blue', 'yellow', 'red', 'green', 'cyan', 'orange', 'magenta', 'purple', 'brown'];
+var colours = ['lightpink', 'cornflowerblue', 'yellow', 'red', 'lightgreen', 'orange', 'magenta', 'purple'];
 
 function randomColour() {
     return colours[Math.floor(Math.random() * colours.length)];
