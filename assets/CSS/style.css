@@ -4,16 +4,30 @@ body {
     background-image: url('../fridge.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: local;
 }
 
 .header-1 {
 
     text-align: center;
     margin-top: 90px;
-    font-size: 3.7vw;
+    font-size: 4.4vw;
     letter-spacing: 3px;
     font-family: Arial Rounded MT Bold;
+    -webkit-text-stroke-color:solid silver;
 }
+
+#headerTwo {
+    display: block;
+    margin-top: 30px;
+    font-size: 3.5vw;
+    justify-content: center;
+    font-family: Arial Rounded MT Bold;
+    text-align: center;
+    color:rgb(209, 129, 206);
+}
+
 
 .form-input {
     width: 100% !important;
@@ -21,20 +35,22 @@ body {
     margin-top: 48px;
     padding: 35px;
     font-size: 35px;
+    color: silver;
     letter-spacing: 3px;
     font-family: Arial Rounded MT Bold;
-    border: 4px solid rgb(100, 97, 97);
+    border: 15px solid rgb(100, 97, 97);
     justify-content: center;
 }
 
 .form {
     width: 60.5% !important;
+
 }
 
 .container {
     border: 1px solid rgb(45, 144, 169);
     justify-content: center;
-
+    background-attachment: local;
 
 }
 
@@ -56,6 +72,7 @@ h1 {
     color: white;
     padding: 10%;
     background-color: silver;
+    height: 25%;
 
 }
 
@@ -66,6 +83,7 @@ h2 {
     padding: 10%;
     background-color: silver;
     font-size: medium;
+
 }
 
 p {
@@ -98,6 +116,26 @@ p {
 
 .imageRecipe {
     width: 100%;
+
+}
+
+input.text {
+    color: silver;
+    text-align: left;
+}
+
+.search {
+    color: silver;
+    text-align: center;
+
+}
+
+#searchBtn {
+    font-size: 50%;
+    color: white;
+    background-color: cornflowerblue;
+    border: solid;
+    border-color: silver;
 
 }
 
