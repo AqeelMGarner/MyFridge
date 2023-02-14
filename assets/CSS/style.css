@@ -11,7 +11,7 @@ body {
 .header-1 {
 
     text-align: center;
-    margin-top: 90px;
+    margin-top: 60px;
     font-size: 3.7vw;
     letter-spacing: 3px;
     font-family: Arial Rounded MT Bold;
@@ -20,12 +20,11 @@ body {
 
 #headerTwo {
     display: block;
-    margin-top: 30px;
-    font-size: 3.5vw;
+    margin-top: 20px;
+    font-size: 2vw;
     justify-content: center;
     font-family: Arial Rounded MT Bold;
     text-align: center;
-    color: rgb(209, 129, 206);
 }
 
 
@@ -48,7 +47,6 @@ body {
 }
 
 .container {
-    border: 1px solid rgb(45, 144, 169);
     justify-content: center;
     background-attachment: local;
 
@@ -60,7 +58,6 @@ body {
 }
 
 .row {
-    border: 1px solid red;
     justify-content: center;
 }
 
@@ -119,23 +116,23 @@ p {
 
 }
 
-input.text {
-    color: silver;
-    text-align: left;
-}
 
 .search {
-    color: silver;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
     text-align: center;
+    border: none;
+    font-family: Arial Rounded MT Bold;
 
 }
 
 #searchBtn {
-    font-size: 50%;
+    font-size: 60%;
     color: white;
-    background-color: cornflowerblue;
-    border: solid;
-    border-color: silver;
+    background-color: rgb(180, 39, 39);
+    border: none;
+    border-radius: 5px;
 
 }
 
