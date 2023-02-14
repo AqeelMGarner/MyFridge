@@ -1,6 +1,5 @@
 
 
-
 document.getElementById("searchBtn").addEventListener("click", function (e) {
     e.preventDefault();
     var query = document.getElementById('placeholderText').value;
@@ -35,6 +34,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
     $.ajax(settings).done(function (response) {
         console.log(response);
+
         var firstHit = response.hits[0].recipe.label;
         var secondHit = response.hits[1].recipe.label;
         var thirdHit = response.hits[2].recipe.label;
@@ -42,6 +42,27 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         var imageOne = response.hits[0].recipe.image;
         var imageTwo = response.hits[1].recipe.image;
         var imageThree = response.hits[2].recipe.image;
+
+        var carbsOne = response.hits[0].recipe.totalNutrients.CHOCDF.quantity;
+        var proteinOne = response.hits[0].recipe.totalNutrients.PROCNT.quantity;
+        var fatOne = response.hits[0].recipe.totalNutrients.FAT.quantity;
+        var caloriesOne = response.hits[0].recipe.calories;
+
+        var carbsTwo = response.hits[1].recipe.totalNutrients.CHOCDF.quantity;
+        var proteinTwo = response.hits[1].recipe.totalNutrients.PROCNT.quantity;
+        var fatTwo = response.hits[1].recipe.totalNutrients.FAT.quantity;
+        var caloriesTwo = response.hits[1].recipe.calories;
+
+        var carbsThree = response.hits[2].recipe.totalNutrients.CHOCDF.quantity;
+        var proteinThree = response.hits[2].recipe.totalNutrients.PROCNT.quantity;
+        var fatThree = response.hits[2].recipe.totalNutrients.FAT.quantity;
+        var caloriesThree = response.hits[2].recipe.calories;
+
+        var methodOne = response.hits[0].recipe.calories;
+        var methodSecond = response.hits[1].recipe.calories;
+        var methodThree = response.hits[2].recipe.calories;
+
+
 
 
         const ingredientList = response.hits[0].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
@@ -92,6 +113,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         cardOne.appendChild(img);
 
+
         const cardTwo = document.getElementById('cardTwo')
         const recipeTwo = document.getElementById('recipeTwo');
         recipeTwo.classList.add('recipeTitle');
@@ -107,6 +129,8 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         }
 
         cardTwo.appendChild(imgTwo);
+
+
 
         const cardThree = document.getElementById('cardThree')
         const recipeThree = document.getElementById('recipeThree');
