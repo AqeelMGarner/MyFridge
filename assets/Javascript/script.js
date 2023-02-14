@@ -1,4 +1,6 @@
 
+
+
 document.getElementById("searchBtn").addEventListener("click", function (e) {
     e.preventDefault();
     var query = document.getElementById('placeholderText').value;
