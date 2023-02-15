@@ -49,6 +49,10 @@ body {
     justify-content: center;
 }
 
+#clearbtn {
+    background-color: rgb(232, 133, 133);
+}
+
 .form {
     width: 60.5% !important;
 

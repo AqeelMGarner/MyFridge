@@ -161,18 +161,15 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
 
 
-                // Save the data to localStorage
                 const recipeData = {
                     recipeTitle: recipeThree.textContent,
                     recipeImage: imgThree.getAttribute('src'),
                     ingredients: ingredientListThree
                 };
 
-                // Retrieve the saved recipe data from local storage and add the new recipe data to it
                 const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
                 savedRecipes.push(recipeData);
 
-                // Save the updated recipe data to local storage
                 localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
             });
         });
@@ -182,13 +179,12 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     })
 });
 
+
 window.addEventListener('load', () => {
     const history = document.getElementById('history');
 
-    // Retrieve the saved recipe data from local storage
     const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
 
-    // Create a button element for each saved recipe and append it to the history element
     savedRecipes.forEach(recipeData => {
         const btnEl = document.createElement('button');
         btnEl.classList.add('list-group-item');
@@ -196,6 +192,22 @@ window.addEventListener('load', () => {
         history.appendChild(btnEl);
     });
 });
+
+const clearBtn = document.createElement('button');
+clearBtn.textContent = 'Clear Recipes';
+clearBtn.classList.add('list-group-item')
+clearBtn.setAttribute('id', 'clearbtn');
+clearBtn.addEventListener('click', () => {
+    localStorage.clear();
+    const history = document.getElementById('history');
+    history.innerHTML = '';
+    history.appendChild(clearBtn);
+});
+
+const history = document.getElementById('history');
+history.appendChild(clearBtn);
+
+
 
 
 
