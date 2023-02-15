@@ -1,4 +1,19 @@
+var colours = ['lightpink', 'cornflowerblue', 'yellow', 'red', 'lightgreen', 'orange', 'magenta', 'purple'];
 
+function randomColour() {
+    return colours[Math.floor(Math.random() * colours.length)];
+}
+
+var header = document.getElementById("header");
+var title = header.innerHTML;
+var colouredTitle = "";
+
+for (var i = 0; i < title.length; i++) {
+    var colour = randomColour();
+    colouredTitle += "<span style='color: " + colour + ";'>" + title[i] + "</span>";
+}
+
+header.innerHTML = colouredTitle;
 
 document.getElementById("searchBtn").addEventListener("click", function (e) {
     e.preventDefault();
@@ -156,20 +171,24 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
                 const history = document.getElementById('history');
                 const btnEl = document.createElement('button');
                 btnEl.classList.add('list-group-item');
-                btnEl.textContent = hitsArray[index]; // Use the index to access the corresponding value in hitsArray
+                btnEl.setAttribute('data-toggle', 'modal');
+                btnEl.setAttribute('data-target', '#modal');
+                btnEl.textContent = hitsArray[index];
                 history.appendChild(btnEl);
-
-
+                btnEl.addEventListener('click', () => {
+                    $("#modal").modal('show');
+                });
 
                 const recipeData = {
-                    recipeTitle: recipeThree.textContent,
-                    recipeImage: imgThree.getAttribute('src'),
-                    ingredients: ingredientListThree
+                    recipeTitle: hitsArray[index],
+
                 };
 
+                // Retrieve the saved recipe data from local storage and add the new recipe data to it
                 const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
                 savedRecipes.push(recipeData);
 
+                // Save the updated recipe data to local storage
                 localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
             });
         });
@@ -189,12 +208,18 @@ window.addEventListener('load', () => {
         const btnEl = document.createElement('button');
         btnEl.classList.add('list-group-item');
         btnEl.textContent = recipeData.recipeTitle;
+        btnEl.setAttribute('data-toggle', 'modal');
+        btnEl.setAttribute('data-target', '#modal');
         history.appendChild(btnEl);
+        btnEl.addEventListener('click', () => {
+            $("#modal").modal('show');
+        });
     });
 });
 
+
 const clearBtn = document.createElement('button');
-clearBtn.textContent = 'Clear Recipes';
+clearBtn.textContent = 'Clear recipes';
 clearBtn.classList.add('list-group-item')
 clearBtn.setAttribute('id', 'clearbtn');
 clearBtn.addEventListener('click', () => {
@@ -211,19 +236,4 @@ history.appendChild(clearBtn);
 
 
 
-var colours = ['lightpink', 'cornflowerblue', 'yellow', 'red', 'lightgreen', 'orange', 'magenta', 'purple'];
 
-function randomColour() {
-    return colours[Math.floor(Math.random() * colours.length)];
-}
-
-var header = document.getElementById("header");
-var title = header.innerHTML;
-var colouredTitle = "";
-
-for (var i = 0; i < title.length; i++) {
-    var colour = randomColour();
-    colouredTitle += "<span style='color: " + colour + ";'>" + title[i] + "</span>";
-}
-
-header.innerHTML = colouredTitle;
