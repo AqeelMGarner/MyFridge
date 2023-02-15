@@ -150,7 +150,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         let hitsArray = [firstHit, secondHit, thirdHit]
 
 
-
         const saveBtns = document.querySelectorAll('.saveBtn');
         saveBtns.forEach((btn, index) => { // Add the index parameter to the function
             btn.addEventListener('click', () => {
