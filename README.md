@@ -1,11 +1,7 @@
 # MyFridge
 
 ## Description
-
-- What was your motivation?
-- Why did you build this project? 
-- What problem does it solve?
-- What did you learn?
+Our motivation for building this website was to help people figure out what to cook with only one ingredient. The reason why we built this application was Because of the recent cost of living crisis. We thought this application would be a great way to figure out what you can cook with only one ingredient in your fridge. The problem that this website solves is that it gives you the ability to see recipes that you can make with one ingredient, Rather than searching though cook books to see what you can and can't make. What we learned throughout this project was how to use basic git workflow also to work as a team and understand ours teammates different work schedules.
 
 ## Table of Contents
 
@@ -13,37 +9,28 @@
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Features](#features)
-- [tests](#tests)
+- [Website](#website)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. (N/A)
+N/A
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+The usage of applications are as follows. Enter a single ingredient and click search. The following cards will show you a few recipes you can make with the chosen ingredient. Also there are nutritious facts about your choice. For more information please refer to 'assets/ images' for screenshots as a visual aid.
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Developers who have contributed to the making of this application and their github accounts 
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+Hoger Shoresh - https://github.com/Hoggi90
+Hayley Callender - https://github.com/Songbird1978
+Aqeel Garner - https://github.com/AqeelMGarner
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+Please refer to the LICENSE in the repository
 
-## Features
+## Website
 
-If your project has a lot of features, list them here.
 
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
