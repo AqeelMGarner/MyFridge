@@ -26,12 +26,14 @@ body {
     display: block;
     margin-top: 20px;
     margin-bottom: 50px;
+    margin-bottom: 50px;
     font-size: 2vw;
     justify-content: center;
     font-family: Arial Rounded MT Bold;
     text-align: center;
     border: 1px solid red;
 }
+
 
 
 .form-input {
@@ -156,6 +158,15 @@ p {
     border: none;
     border-radius: 5px;
 
+}
+
+.list-group-item {
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    font-size: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
 }
 
 
