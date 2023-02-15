@@ -74,7 +74,9 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         ingredientOne.classList.add('ingredients');
 
         cardBackOne.innerHTML = `
-        <h2 id="ingredientOne">Ingredients</h2>
+        <h2 id="ingredientOne">Ingredients  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get recipe
+      </button></h2>
         <ul>${ingredientList.join('')}</ul>
       `;
 
@@ -83,7 +85,9 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         ingredientTwo.classList.add('ingredients');
 
         cardBackTwo.innerHTML = `
-        <h2 id="ingredientTwo">Ingredients</h2>
+        <h2 id="ingredientTwo">Ingredients  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get recipe
+      </button></h2>
         <ul>${ingredientListTwo.join('')}</ul>
       `;
 
@@ -92,7 +96,9 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         ingredientThree.classList.add('ingredients');
 
         cardBackThree.innerHTML = `
-        <h2 id="ingredientThree">Ingredients</h2>
+        <h2 id="ingredientThree">Ingredients  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Get recipe
+      </button></h2>
         <ul>${ingredientListThree.join('')}</ul>
       `;
 
@@ -152,6 +158,13 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     });
 
 });
+
+const myModal = document.getElementById('exampleModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
 
 var colours = ['lightpink', 'cornflowerblue', 'yellow', 'red', 'lightgreen', 'orange', 'magenta', 'purple'];
 
