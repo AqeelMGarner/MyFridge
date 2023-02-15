@@ -55,8 +55,6 @@ body {
 .container {
     justify-content: center;
     border: 1px solid red;
-
-
 }
 
 .history {
@@ -70,6 +68,7 @@ body {
     align-items: right;
 
     border: 1px solid red;
+
 
 }
 
@@ -158,6 +157,20 @@ p {
 
 }
 
+.col-sm {
+
+    padding: 0;
+    margin: 0;
+    border: solid red;
+}
+
+.aside-card-front {
+
+    border: 5px solid silver;
+
+    background-color: white;
+
+}
 
 
 
@@ -165,10 +178,10 @@ p {
 .flip-card {
     display: inline-flex;
     background-color: transparent;
-    width: 220px;
+    width: 200px;
     height: 400px;
     perspective: 1000px;
-    /* Remove this if you don't want the 3D effect */
+   
 }
 
 /* This container is needed to position the front and back side */

@@ -14,85 +14,108 @@
 <body>
 
 
-    <div class="container-fluid">
+    <div class="container">
 
-        <div class="row">
-            <div id="header" class="header-1">
+        <div class="row justify-content-md-center" style="min-height: 200px">
+            
+            <div id="header" class="header-1 col-lg-7">
                 What's in my Fridge?
             </div>
+            
         </div>
 
-        <div class="row">
+        
 
-            <aside id="history" class="header-1 col-lg-3">
+        <div class="row justify-content-md-center">
+
+            <aside class="col-sm">
+                <div class="aside-card" id="fact-card-one">
+                    <div class="fact-card-inner">
+                        <div class="fact-card-front" id="info-card-one">
+                            <h1 id="Title-fact-one">Ingredient Fact</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aside-card" id="fact-card-one">
+                    <div class="fact-card-inner">
+                        <div class="card-front" id="info-card-one">
+                            <h1 id="Title-fact-one">Nutritional Facts</h1>
+                        </div>
+                    </div>
+                </div>
 
             </aside>
-            <div class="main col-lg-6" style="min-height: 200px;">
 
-                <div class="row justify-content-md-center">
+            <div id="headerTwo" class="header-2 col-lg-7">
+                <input type="text" id="placeholderText" placeholder="TYPE IN ONE INGREDIENT" class="search">
+                <input type="button" value="Search" id="searchBtn">
 
-                    <div id="headerTwo" class="header-2">
-                        <input type="text" id="placeholderText" placeholder="TYPE IN ONE INGREDIENT" class="search">
-                        <input type="button" value="Search" id="searchBtn">
+                <div class="row">
+
+                    <div class="col-sm">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" id="cardOne">
+                                    <h1 id="recipeOne"></h1>
+                                </div>
+                                <div class="flip-card-back" id="cardBackOne">
+                                    <h2 id="ingredientOne">Ingredients</h2>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+                    <div class="col-sm">
+                        <div class="flip-card" id="recipe2">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" id="cardTwo">
+                                    <h1 id="recipeTwo"></h1>
 
-                    <div class="row justify-content-md-center cards">
+                                </div>
+                                <div class="flip-card-back" id="cardBackTwo">
+                                    <h2 id="ingredientTwo">Ingredients</h2>
 
-                        <div class="col-sm">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front" id="cardOne">
-                                        <h1 id="recipeOne"></h1>
-
-
-                                    </div>
-                                    <div class="flip-card-back" id="cardBackOne">
-                                        <h2 id="ingredientOne">Ingredients</h2>
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-sm">
-                            <div class="flip-card" id="recipe2">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front" id="cardTwo">
-                                        <h1 id="recipeTwo"></h1>
-
-
-                                    </div>
-                                    <div class="flip-card-back" id="cardBackTwo">
-                                        <h2 id="ingredientTwo">Ingredients</h2>
-
-                                    </div>
+                    <div class="col-sm">
+                        <div class="flip-card" id="recipe3">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" id="cardThree">
+                                    <h1 id="recipeThree"> </h1>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm">
-                            <div class="flip-card" id="recipe3">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front" id="cardThree">
-                                        <h1 id="recipeThree"> </h1>
-
-                                    </div>
-                                    <div class="flip-card-back" id="cardBackThree">
-                                        <h2 id="ingredientThree">Ingredients</h2>
-
-                                    </div>
+                                <div class="flip-card-back" id="cardBackThree">
+                                    <h2 id="ingredientThree">Ingredients</h2>
+                                    
                                 </div>
                             </div>
                         </div>
 
                     </div>
+
 
                 </div>
+
+
+              
             </div>
 
-            <aside id="nutrition" class="header-1 col-lg-3">
 
+
+
+
+            <aside class="col-sm">
+                <div class="storage-card" id="storage-card">
+                    <div class="storage-card-inner">
+                        <div class="aside-card-front" id="storage card">
+
+                        </div>
+                    </div>
+                </div>
             </aside>
 
 
@@ -109,8 +132,7 @@
 
 
 
-
-
+    </div>
 
 
 
