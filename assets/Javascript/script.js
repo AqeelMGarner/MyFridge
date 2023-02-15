@@ -4,6 +4,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     e.preventDefault();
     var query = document.getElementById('placeholderText').value;
 
+//searching the API calorieninjas for the nutritional information of one ingredient.
 
     $.ajax({
         method: 'GET',
@@ -21,9 +22,8 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             var ingredientInfo = document.getElementById('nutrition');
             var infoText = document.createElement('h6');
             infoText.classList.add('infoText');
-            infoText.textContent = 'Total Carbs: ' + carb + 'g, Total Fat: ' + fat + 'g, Total Calories: ' + calories + ', Total Protein: ' + protein + 'g';
+            infoText.textContent = 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat  + 'g'  +  '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
             ingredientInfo.appendChild(infoText);
-
 
         },
         error: function ajaxError(jqXHR) {
@@ -32,7 +32,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     });
 
 
-
+//searching the API Edamam using key & user input (query)
 
     const settings = {
         "async": true,
@@ -78,21 +78,32 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
 
 
-        const cardOne = document.getElementById('cardOne');
-        const recipeOne = document.getElementById('recipeOne');
-        recipeOne.classList.add('recipeTitle');
-        recipeOne.textContent = firstHit;
-        const img = document.createElement("img");
-        img.classList.add("imageRecipe");
-        img.setAttribute("src", imageOne);
-        cardOne.appendChild(img);
-        var existingImgOne = cardOne.querySelector('img');
-
+        const cardOne = document.getElementById('cardOne'); //targeting the ID of cardOne
+        const recipeOne = document.getElementById('recipeOne'); //targeting ID of recipeOne
+        recipeOne.classList.add('recipeTitle'); //adding class of recipeTitle
+        recipeOne.textContent = firstHit; //adding firstHit info from API as textContentn
+        const img = document.createElement("img"); //creating the image tag
+        img.classList.add("imageRecipe"); //adding a class to image
+        img.setAttribute("src", imageOne); //setting the Attribute as src from imageOne
+        cardOne.appendChild(img); //appending the image as a child of cardOne
+        var existingImgOne = cardOne.querySelector('img');//if there is an image - call it existing Image
+        
         if (existingImgOne) {
             cardOne.removeChild(existingImgOne);
-        }
+        } //What to do if there is an image - take it away
 
-        cardOne.appendChild(img);
+        cardOne.appendChild(img); //append new image
+
+        //adding nutritionList to the bottom of the cardOne
+        const nutritionListOne = document.getElementById('nutritionListOne');
+        
+        nutritionList = [carbsOne, fatOne, caloriesOne, proteinOne];
+        
+        
+
+        
+
+       
 
         const cardBackOne = document.getElementById('cardBackOne');
         cardBackOne.innerHTML = `
