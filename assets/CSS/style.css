@@ -26,12 +26,14 @@ body {
     display: block;
     margin-top: 20px;
     margin-bottom: 50px;
+    margin-bottom: 50px;
     font-size: 2vw;
     justify-content: center;
     font-family: Arial Rounded MT Bold;
     text-align: center;
     border: 1px solid red;
 }
+
 
 
 .form-input {
@@ -55,6 +57,8 @@ body {
 .container {
     justify-content: center;
     border: 1px solid red;
+
+
 }
 
 .history {
@@ -68,7 +72,6 @@ body {
     align-items: right;
 
     border: 1px solid red;
-
 
 }
 
@@ -157,20 +160,15 @@ p {
 
 }
 
-.col-sm {
-
-    padding: 0;
-    margin: 0;
-    border: solid red;
-}
-
-.aside-card-front {
-
-    border: 5px solid silver;
-
+.list-group-item {
+    align-items: center;
+    width: 100%;
     background-color: white;
-
+    font-size: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
 }
+
 
 
 
@@ -178,10 +176,10 @@ p {
 .flip-card {
     display: inline-flex;
     background-color: transparent;
-    width: 200px;
+    width: 220px;
     height: 400px;
     perspective: 1000px;
-   
+    /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */

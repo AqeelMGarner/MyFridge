@@ -11,15 +11,28 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         headers: { 'X-Api-Key': 'p659xQvXDLI/IO+zraCpng==I1MzyWAxQGwYt7w6' },
         contentType: 'application/json',
         success: function (result) {
-            console.log(result)
+
+            const carb = result.items[0].carbohydrates_total_g;
+            const fat = result.items[0].fat_total_g;
+            const calories = result.items[0].calories;
+            const protein = result.items[0].protein_g;
+            console.log(result);
+
+            var ingredientInfo = document.getElementById('nutrition');
+            var infoText = document.createElement('h6');
+            infoText.classList.add('infoText');
+            infoText.textContent = 'Total Carbs: ' + carb + 'g, Total Fat: ' + fat + 'g, Total Calories: ' + calories + ', Total Protein: ' + protein + 'g';
+            ingredientInfo.appendChild(infoText);
+
 
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
+    });
 
 
-    })
+
 
     const settings = {
         "async": true,
@@ -58,43 +71,11 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         var fatThree = response.hits[2].recipe.totalNutrients.FAT.quantity;
         var caloriesThree = response.hits[2].recipe.calories;
 
-        var methodOne = response.hits[0].recipe.calories;
-        var methodSecond = response.hits[1].recipe.calories;
-        var methodThree = response.hits[2].recipe.calories;
-
-
-
-
         const ingredientList = response.hits[0].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
         const ingredientListTwo = response.hits[1].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
         const ingredientListThree = response.hits[2].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
 
-        const cardBackOne = document.getElementById('cardBackOne');
-        const ingredientOne = document.getElementById('ingredientOne');
-        ingredientOne.classList.add('ingredients');
 
-        cardBackOne.innerHTML = `
-        <h2 id="ingredientOne">Ingredients</h2>
-        <ul>${ingredientList.join('')}</ul>
-      `;
-
-        const cardBackTwo = document.getElementById('cardBackTwo');
-        const ingredientTwo = document.getElementById('ingredientTwo');
-        ingredientTwo.classList.add('ingredients');
-
-        cardBackTwo.innerHTML = `
-        <h2 id="ingredientTwo">Ingredients</h2>
-        <ul>${ingredientListTwo.join('')}</ul>
-      `;
-
-        const cardBackThree = document.getElementById('cardBackThree');
-        const ingredientThree = document.getElementById('ingredientThree');
-        ingredientThree.classList.add('ingredients');
-
-        cardBackThree.innerHTML = `
-        <h2 id="ingredientThree">Ingredients</h2>
-        <ul>${ingredientListThree.join('')}</ul>
-      `;
 
 
         const cardOne = document.getElementById('cardOne');
@@ -113,6 +94,12 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         cardOne.appendChild(img);
 
+        const cardBackOne = document.getElementById('cardBackOne');
+        cardBackOne.innerHTML = `
+        <h2 id="ingredientOne">Ingredients<button class="btn saveBtn">
+        <i class="fa fa-save"></i></button></h2>
+              <ul>${ingredientList.join('')}</ul>
+            `;
 
         const cardTwo = document.getElementById('cardTwo')
         const recipeTwo = document.getElementById('recipeTwo');
@@ -130,7 +117,12 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         cardTwo.appendChild(imgTwo);
 
-
+        const cardBackTwo = document.getElementById('cardBackTwo');
+        cardBackTwo.innerHTML = `
+        <h2 id="ingredientTwo">Ingredients<button class="btn saveBtn">
+        <i class="fa fa-save"></i></button></h2>
+        <ul>${ingredientListTwo.join('')}</ul>
+      `;
 
         const cardThree = document.getElementById('cardThree')
         const recipeThree = document.getElementById('recipeThree');
@@ -148,10 +140,64 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         cardThree.appendChild(imgThree);
 
+        const cardBackThree = document.getElementById('cardBackThree');
+        cardBackThree.innerHTML = `
+      <h2 id="ingredientThree">Ingredients<button class="btn saveBtn">
+      <i class="fa fa-save"></i></button></h2>
+      <ul>${ingredientListThree.join('')}</ul>
+      `;
 
-    });
+        let hitsArray = [firstHit, secondHit, thirdHit]
 
+
+        const saveBtns = document.querySelectorAll('.saveBtn');
+        saveBtns.forEach((btn, index) => { // Add the index parameter to the function
+            btn.addEventListener('click', () => {
+                const history = document.getElementById('history');
+                const btnEl = document.createElement('button');
+                btnEl.classList.add('list-group-item');
+                btnEl.textContent = hitsArray[index]; // Use the index to access the corresponding value in hitsArray
+                history.appendChild(btnEl);
+
+
+
+                // Save the data to localStorage
+                const recipeData = {
+                    recipeTitle: recipeThree.textContent,
+                    recipeImage: imgThree.getAttribute('src'),
+                    ingredients: ingredientListThree
+                };
+
+                // Retrieve the saved recipe data from local storage and add the new recipe data to it
+                const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+                savedRecipes.push(recipeData);
+
+                // Save the updated recipe data to local storage
+                localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+            });
+        });
+
+
+
+    })
 });
+
+window.addEventListener('load', () => {
+    const history = document.getElementById('history');
+
+    // Retrieve the saved recipe data from local storage
+    const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+
+    // Create a button element for each saved recipe and append it to the history element
+    savedRecipes.forEach(recipeData => {
+        const btnEl = document.createElement('button');
+        btnEl.classList.add('list-group-item');
+        btnEl.textContent = recipeData.recipeTitle;
+        history.appendChild(btnEl);
+    });
+});
+
+
 
 var colours = ['lightpink', 'cornflowerblue', 'yellow', 'red', 'lightgreen', 'orange', 'magenta', 'purple'];
 
