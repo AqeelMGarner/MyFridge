@@ -31,6 +31,14 @@ Aqeel Garner - https://github.com/AqeelMGarner
 
 Please refer to the LICENSE in the repository
 
-## Website
+## Deployed Website
 
+https://aqeelmgarner.github.io/MyFridge/
 
+##Github URL
+
+https://github.com/AqeelMGarner/MyFridge
+
+## Presentation 
+
+[MyFridge Presentation.pdf](https://github.com/AqeelMGarner/MyFridge/files/10757321/MyFridge.Presentation.pdf)
