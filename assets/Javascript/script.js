@@ -33,10 +33,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             const protein = result.items[0].protein_g;
             console.log(result);
 
-            var ingredientInfo = document.getElementById('nutrition');
-            var infoText = document.createElement('h6');
+            var ingredientInfo = document.getElementById('cardNutrition');
+            var infoText = document.createElement('p');
             infoText.classList.add('infoText');
-            infoText.textContent = 'Total Carbs: ' + carb + 'g, Total Fat: ' + fat + 'g, Total Calories: ' + calories + ', Total Protein: ' + protein + 'g';
+            infoText.textContent = query + ':         ' + 'Total Carbs: ' + carb + 'g, Total Fat: ' + fat + 'g, Total Calories: ' + calories + ', Total Protein: ' + protein + 'g';
             ingredientInfo.appendChild(infoText);
 
 
@@ -45,8 +45,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             console.error('Error: ', jqXHR.responseText);
         }
     });
-
-
 
 
     const settings = {
@@ -190,8 +188,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
                 localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
             });
         });
-
-
 
     })
 });
