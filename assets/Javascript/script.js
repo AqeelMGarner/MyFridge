@@ -97,18 +97,12 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         //adding nutritionList to the bottom of the cardOne
         const nutritionListOne = document.getElementById('nutritionListOne');
         
-        nutritionList = [carbsOne, fatOne, caloriesOne, proteinOne];
-        
-        
-
-        
-
-       
+               
 
         const cardBackOne = document.getElementById('cardBackOne');
         cardBackOne.innerHTML = `
         <h2 id="ingredientOne">Ingredients<button class="btn saveBtn">
-        <i class="fa fa-save"></i></button></h2>
+        <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
               <ul>${ingredientList.join('')}</ul>
             `;
 
@@ -131,7 +125,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const cardBackTwo = document.getElementById('cardBackTwo');
         cardBackTwo.innerHTML = `
         <h2 id="ingredientTwo">Ingredients<button class="btn saveBtn">
-        <i class="fa fa-save"></i></button></h2>
+        <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
         <ul>${ingredientListTwo.join('')}</ul>
       `;
 
@@ -154,7 +148,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const cardBackThree = document.getElementById('cardBackThree');
         cardBackThree.innerHTML = `
       <h2 id="ingredientThree">Ingredients<button class="btn saveBtn">
-      <i class="fa fa-save"></i></button></h2>
+      <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
       <ul>${ingredientListThree.join('')}</ul>
       `;
 
