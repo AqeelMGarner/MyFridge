@@ -113,13 +113,16 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         cardOne.appendChild(img); //append new image
 
+        const existingNutritionList = cardOne.querySelector('.nutritioninfo');
+        if (existingNutritionList) {
+            cardOne.removeChild(existingNutritionList);
+        }
+
         //adding nutritionList to the bottom of the cardOne
 
-        const nutritionListOne = document.getElementById('nutritionListOne');
-
-
-
-
+        const nutritionListOne = document.createElement('div');
+        nutritionListOne.classList.add('nutritioninfo');
+        cardOne.appendChild(nutritionListOne);
 
 
 
@@ -148,6 +151,15 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         cardTwo.appendChild(imgTwo);
 
+        const existingNutritionListTwo = cardTwo.querySelector('.nutritioninfo');
+        if (existingNutritionListTwo) {
+            cardTwo.removeChild(existingNutritionListTwo);
+        }
+
+        const nutritionListTwo = document.createElement('div');
+        nutritionListTwo.classList.add('nutritioninfo');
+        cardTwo.appendChild(nutritionListTwo);
+
         const cardBackTwo = document.getElementById('cardBackTwo');
         cardBackTwo.innerHTML = `
         <h2 id="ingredientTwo">Ingredients<button class="btn saveBtn">
@@ -172,12 +184,53 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         cardThree.appendChild(imgThree);
 
+        const existingNutritionListThree = cardThree.querySelector('.nutritioninfo');
+        if (existingNutritionListThree) {
+            cardThree.removeChild(existingNutritionListThree);
+        }
+
+        const nutritionListThree = document.createElement('div');
+        nutritionListThree.classList.add('nutritioninfo');
+        cardThree.appendChild(nutritionListThree);
+
         const cardBackThree = document.getElementById('cardBackThree');
         cardBackThree.innerHTML = `
       <h2 id="ingredientThree">Ingredients<button class="btn saveBtn">
 
-      <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
+      <i class="fa fa-save" style="font-size:15px;color:white"></i></button>
+
       <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
+
+        // For cardOne
+        nutritionListOne.innerHTML = `
+<ul>
+    <li>Carbs: ${carbsOne.toFixed(2)}g</li>
+    <li>Protein: ${proteinOne.toFixed(2)}g</li>
+    <li>Fat: ${fatOne.toFixed(2)}g</li>
+    <li>Calories: ${caloriesOne.toFixed(2)}</li>
+</ul>
+`;
+
+        // For cardTwo
+        nutritionListTwo.innerHTML = `
+<ul>
+    <li>Carbs: ${carbsTwo.toFixed(2)}g</li>
+    <li>Protein: ${proteinTwo.toFixed(2)}g</li>
+    <li>Fat: ${fatTwo.toFixed(2)}g</li>
+    <li>Calories: ${caloriesTwo.toFixed(2)}</li>
+</ul>
+`;
+
+        // For cardThree
+        nutritionListThree.innerHTML = `
+<ul>
+    <li>Carbs: ${carbsThree.toFixed(2)}g</li>
+    <li>Protein: ${proteinThree.toFixed(2)}g</li>
+    <li>Fat: ${fatThree.toFixed(2)}g</li>
+    <li>Calories: ${caloriesThree.toFixed(2)}</li>
+</ul>
+`;
+
 
 
         let hitsArray = [firstHit, secondHit, thirdHit];
