@@ -63,14 +63,14 @@ body {
 
 
 }
-
+/* styling for the text displayed on the cards */
 .card-text {
     font-size: 14px;
     text-align: center;
     letter-spacing: 3px;
     font-family: Arial;
 }
-
+/*styling for the title of the cards*/
 .card-title {
     padding-top: 10%;
     margin-bottom: 0 !important;
@@ -92,12 +92,16 @@ body {
 }
 
 
+/* display styling for nutrition facts */
+
+
 .infoHead {
     text-transform: capitalize;
     color: rgb(232, 133, 133);
     font-weight: bolder;
     font-size: 18px;
 }
+
 
 
 .nutrition {
@@ -123,7 +127,7 @@ body {
     font-size: 10px;
     font-weight: bold;
 }
-
+/*display for the history section*/
 .history {
 
     text-align: center;
@@ -170,7 +174,7 @@ h2 {
 p {
     height: 25%
 }
-
+/* styling for recipe cards*/
 #recipeOne {
     color: rgb(209, 129, 206);
     font-size: 16px;
@@ -188,13 +192,13 @@ p {
 
 
 }
-
+/* styling for the recipe image */
 .imageRecipe {
     width: 100%;
 
 }
 
-
+/*styling for input ingredient text bar*/
 .search {
     width: 100%;
     color: rgb(0, 0, 0);
@@ -204,7 +208,7 @@ p {
     font-family: Arial Rounded MT Bold;
 
 }
-
+/*styling for search button*/
 #searchBtn {
     font-size: 60%;
     color: white;
