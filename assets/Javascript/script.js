@@ -34,10 +34,12 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             const protein = result.items[0].protein_g;
             console.log(result);
 
-            var ingredientInfo = document.getElementById('nutrition');
-            var infoText = document.createElement('h6');
+            var ingredientInfo = document.getElementById('nutritionFact');
+            var infoText = document.createElement('p');
             infoText.classList.add('infoText');
-            infoText.textContent = 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat + 'g' + '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
+
+            infoText.textContent = query + ': ' + 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat  + 'g'  +  '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
+
             ingredientInfo.appendChild(infoText);
 
         },
@@ -47,7 +49,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     });
 
 
+
+
     //searching the API Edamam using key & user input (query)
+
 
     const settings = {
         "async": true,
@@ -89,8 +94,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const ingredientList = response.hits[0].recipe.ingredientLines.map(ingredient => `${ingredient}`);
         const ingredientListTwo = response.hits[1].recipe.ingredientLines.map(ingredient => `${ingredient}`);
         const ingredientListThree = response.hits[2].recipe.ingredientLines.map(ingredient => `${ingredient}`);
-
-
 
 
         const cardOne = document.getElementById('cardOne'); //targeting the ID of cardOne
@@ -225,7 +228,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
                 localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
             });
         });
-
 
     })
 });
