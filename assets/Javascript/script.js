@@ -135,7 +135,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
         <ul>${ingredientList.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>            `;
 
-
+        //HTML recipe card for the second recipe hit returned from the API response
         const cardTwo = document.getElementById('cardTwo')
         const recipeTwo = document.getElementById('recipeTwo');
         recipeTwo.classList.add('recipeTitle');
@@ -168,7 +168,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
         <ul>${ingredientListTwo.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
 
-
+        //HTML elements that will display the information for the third recipe hit in the search results
         const cardThree = document.getElementById('cardThree')
         const recipeThree = document.getElementById('recipeThree');
         recipeThree.classList.add('recipeTitle');
@@ -233,11 +233,11 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 `;
 
 
-        
+        //creating three arrays
         let hitsArray = [firstHit, secondHit, thirdHit];
         let imageArray = [imageOne, imageTwo, imageThree];
         let ingredientArray = [ingredientList, ingredientListTwo, ingredientListThree];
-        //querySelector for saved recpies 
+        //selects all the elements with class "saveBtn" and attaches a click event listener to them.
         const saveBtns = document.querySelectorAll('.saveBtn');
         saveBtns.forEach((btn, index) => {
             btn.addEventListener('click', () => {
@@ -248,7 +248,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
                 btnEl.setAttribute('data-target', '#modal');
                 btnEl.textContent = hitsArray[index];
                 history.appendChild(btnEl);
-                // event listener for modals 
+                //event listener for each button that was created when the "Save" button was clicked
                 btnEl.addEventListener('click', () => {
                     const modalTitle = document.getElementById('modalTitle');
                     const modalBody = document.getElementById('modalBody');
@@ -266,7 +266,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
                     modalBody.appendChild(ingreList);
 
                 });
-
+                //object called recipeData that contains information about a recipe
                 const recipeData = {
                     recipeTitle: hitsArray[index],
                     recipeImage: imageArray[index],
@@ -287,12 +287,12 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     })
 });
 
-// event listener for the saved recpies 
+//event listener to the load event of the window object
 window.addEventListener('load', () => {
     const history = document.getElementById('history');
-
+    //retrieves saved recipes from local storage 
     const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
-    // display the modals function 
+    //forEach method to display them in the recipe history section
     savedRecipes.forEach(recipeData => {
         const btnEl = document.createElement('button');
         btnEl.classList.add('list-group-item');
@@ -323,7 +323,7 @@ window.addEventListener('load', () => {
 
 
 
-// clear button function 
+//creates a "Clear recipes" button and adds it to the "history" list
 const clearBtn = document.createElement('button');
 clearBtn.textContent = 'Clear recipes';
 clearBtn.classList.add('list-group-item')
