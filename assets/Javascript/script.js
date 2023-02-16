@@ -112,13 +112,9 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         //adding nutritionList to the bottom of the cardOne
         const nutritionListOne = document.getElementById('nutritionListOne');
         
-       git 
+    
         
-        nutritionListOne.textContent = "Carbs: " + carbsOne;   
         
-
-        cardOne.createElement("li");
-        li.appendChild(nutritionListOne);
 
 
            
