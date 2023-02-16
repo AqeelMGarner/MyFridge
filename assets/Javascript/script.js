@@ -44,7 +44,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             infoText.classList.add('infoText');
 
             infoHead.textContent = query + ':';
-            infoText.textContent = 'Carbs: ' + carb + 'g, ' + 'Fat: ' + fat + 'g, ' + 'Protein: ' + protein + 'g, ' + 'Calories: ' + calories;
+            infoText.textContent = 'Carbs: ' + carb + 'g,    ' + 'Fat: ' + fat + 'g,     ' + 'Protein: ' + protein + 'g,    ' + 'Calories: ' + calories;
 
             ingredientInfo.appendChild(infoHead);
             ingredientInfo.appendChild(infoText);
