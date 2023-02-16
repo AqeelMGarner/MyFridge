@@ -71,10 +71,7 @@ body {
 
 .card-title {
     padding-top: 10%;
-}
-
-h5 {
-    letter-spacing: 3px;
+    margin-bottom: 0 !important;
 }
 
 .card-link {
@@ -86,17 +83,37 @@ h5 {
 }
 
 .infoText {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
-    letter-spacing: 3px;
     font-family: Arial;
+}
+
+.infoHead {
+    text-transform: capitalize;
+    color: red;
+    font-weight: bolder;
+    font-size: 18px;
 }
 
 
 .nutrition {
-    align-items: right;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+    font-family: Arial Rounded MT Bold;
 
 }
+
+#nutritionFact {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+
+    font-family: Arial Rounded MT Bold;
+
+}
+
 
 .nutritioninfo {
     text-align: left;
@@ -206,6 +223,14 @@ p {
 .card {
     border: none;
     width: 100%;
+    background-color: transparent;
+
+}
+
+.card-body {
+    padding: 0px !important;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 
