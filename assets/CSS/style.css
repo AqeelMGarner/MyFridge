@@ -12,7 +12,7 @@ body {
 .header-1 {
 
     text-align: center;
-    font-size: 3.7vw;
+    font-size: 6vw;
     letter-spacing: 3px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -23,10 +23,10 @@ body {
 
 #headerTwo {
     display: block;
+    width: 100%;
     margin-top: 20px;
     margin-bottom: 50px;
-    margin-bottom: 50px;
-    font-size: 2vw;
+    font-size: 30px;
     justify-content: center;
     font-family: Arial Rounded MT Bold;
     text-align: center;
@@ -49,6 +49,8 @@ body {
 
 #clearbtn {
     background-color: rgb(232, 133, 133);
+    color: white;
+
 }
 
 .form {
@@ -71,10 +73,7 @@ body {
 /*styling for the title of the cards*/
 .card-title {
     padding-top: 10%;
-}
-
-h5 {
-    letter-spacing: 3px;
+    margin-bottom: 0 !important;
 }
 
 .card-link {
@@ -86,17 +85,42 @@ h5 {
 }
 
 .infoText {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
-    letter-spacing: 3px;
     font-family: Arial;
 }
 
+
 /* display styling for nutrition facts */
+
+
+.infoHead {
+    text-transform: capitalize;
+    color: rgb(232, 133, 133);
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+
+
 .nutrition {
-    align-items: right;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+    font-family: Arial Rounded MT Bold;
 
 }
+
+#nutritionFact {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+
+    font-family: Arial Rounded MT Bold;
+
+}
+
 
 .nutritioninfo {
     text-align: left;
@@ -113,8 +137,6 @@ h5 {
 
 
 }
-
-
 
 
 #card-container {
@@ -190,7 +212,7 @@ p {
 #searchBtn {
     font-size: 60%;
     color: white;
-    background-color: rgb(180, 39, 39);
+    background-color: rgb(232, 133, 133);
     border: none;
     border-radius: 5px;
 
@@ -201,12 +223,21 @@ p {
     width: 100%;
     background-color: rgb(241, 241, 241);
     font-size: 12px;
-    border: 1px solid rgb(136, 135, 135);
+    border: 1px solid white;
     border-radius: 5px;
 }
 
 .card {
     border: none;
+    width: 100%;
+    background-color: transparent;
+
+}
+
+.card-body {
+    padding: 0px !important;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 
@@ -216,11 +247,13 @@ p {
 /*FLIP CARDS 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
-    display: inline-flex;
+    display: flex;
+    justify-content: center !important;
     background-color: transparent;
     width: 210px;
     height: 400px;
     perspective: 1000px;
+    margin: auto;
     /* Remove this if you don't want the 3D effect */
 }
 

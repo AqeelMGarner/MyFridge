@@ -1,5 +1,8 @@
 # MyFridge
 
+![image](https://user-images.githubusercontent.com/118288349/219427849-4b230bbe-9d75-4431-bc4b-894a8dd864b2.png)
+
+
 ## Description
 Our motivation for building this website was to help people figure out what to cook with only one ingredient. The reason why we built this application was Because of the recent cost of living crisis. We thought this application would be a great way to figure out what you can cook with only one ingredient in your fridge. The problem that this website solves is that it gives you the ability to see recipes that you can make with one ingredient, Rather than searching though cook books to see what you can and can't make. What we learned throughout this project was how to use basic git workflow also to work as a team and understand ours teammates different work schedules.
 
@@ -31,6 +34,14 @@ Aqeel Garner - https://github.com/AqeelMGarner
 
 Please refer to the LICENSE in the repository
 
-## Website
+## Deployed Website
 
+https://aqeelmgarner.github.io/MyFridge/
 
+##Github URL
+
+https://github.com/AqeelMGarner/MyFridge
+
+## Presentation 
+
+[MyFridge Presentation.pdf](https://github.com/AqeelMGarner/MyFridge/files/10757321/MyFridge.Presentation.pdf)
