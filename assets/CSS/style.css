@@ -49,6 +49,8 @@ body {
 
 #clearbtn {
     background-color: rgb(232, 133, 133);
+    color: white;
+
 }
 
 .form {
@@ -89,9 +91,10 @@ body {
     font-family: Arial;
 }
 
+
 .infoHead {
     text-transform: capitalize;
-    color: red;
+    color: rgb(232, 133, 133);
     font-weight: bolder;
     font-size: 18px;
 }
@@ -205,7 +208,7 @@ p {
 #searchBtn {
     font-size: 60%;
     color: white;
-    background-color: rgb(180, 39, 39);
+    background-color: rgb(232, 133, 133);
     border: none;
     border-radius: 5px;
 
@@ -216,7 +219,7 @@ p {
     width: 100%;
     background-color: rgb(241, 241, 241);
     font-size: 12px;
-    border: 1px solid rgb(136, 135, 135);
+    border: 1px solid white;
     border-radius: 5px;
 }
 
