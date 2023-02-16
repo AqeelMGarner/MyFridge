@@ -23,16 +23,17 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
     $.ajax({
         method: 'GET',
-        url: 'https://api.calorieninjas.com/v1/nutrition?query=' + query,
-        headers: { 'X-Api-Key': 'p659xQvXDLI/IO+zraCpng==I1MzyWAxQGwYt7w6' },
+        url: 'https://api.api-ninjas.com/v1/nutrition?query=' + query,
+        headers: { 'X-Api-Key': 'p659xQvXDLI/IO+zraCpng==0ES11CeaJXk7fr0G' },
         contentType: 'application/json',
         success: function (result) {
-
-            const carb = result.items[0].carbohydrates_total_g;
-            const fat = result.items[0].fat_total_g;
-            const calories = result.items[0].calories;
-            const protein = result.items[0].protein_g;
             console.log(result);
+
+
+            const carb = result[0].carbohydrates_total_g;
+            const fat = result[0].fat_total_g;
+            const calories = result[0].calories;
+            const protein = result[0].protein_g;
 
             var ingredientInfo = document.getElementById('nutritionFact');
             ingredientInfo.innerHTML = '';
@@ -43,14 +44,9 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
             ingredientInfo.appendChild(infoText);
 
+
         },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
-        }
     });
-
-
-
 
     //searching the API Edamam using key & user input (query)
 
@@ -76,6 +72,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         var imageOne = response.hits[0].recipe.image;
         var imageTwo = response.hits[1].recipe.image;
         var imageThree = response.hits[2].recipe.image;
+
+        var methodOne = response.hits[0].recipe.url;
+        var methodTwo = response.hits[1].recipe.url;
+        var methodThree = response.hits[2].recipe.url;
 
         var carbsOne = response.hits[0].recipe.totalNutrients.CHOCDF.quantity;
         var proteinOne = response.hits[0].recipe.totalNutrients.PROCNT.quantity;
@@ -130,9 +130,9 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const cardBackOne = document.getElementById('cardBackOne');
         cardBackOne.innerHTML = `
         <h2 id="ingredientOne">Ingredients<button class="btn saveBtn">
-
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
-        <ul>${ingredientList.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>            `;
+        <center><a href=${methodOne}>Method</a></center>
+        <ul>${ingredientList.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>`;
 
 
         const cardTwo = document.getElementById('cardTwo')
@@ -165,6 +165,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         <h2 id="ingredientTwo">Ingredients<button class="btn saveBtn">
 
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
+        <center><a href=${methodTwo}>Method</a></center>
         <ul>${ingredientListTwo.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
 
 
@@ -195,11 +196,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         const cardBackThree = document.getElementById('cardBackThree');
         cardBackThree.innerHTML = `
-      <h2 id="ingredientThree">Ingredients<button class="btn saveBtn">
-
-      <i class="fa fa-save" style="font-size:15px;color:white"></i></button>
-
-      <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
+        <h2 id="ingredientThree">Ingredients<button class="btn saveBtn">
+        <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
+        <center><a href=${methodThree}>Method</a></center>
+        <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
 
         // For cardOne
         nutritionListOne.innerHTML = `
