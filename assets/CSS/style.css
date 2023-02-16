@@ -69,6 +69,10 @@ body {
     font-family: Arial;
 }
 
+.card-title {
+    padding-top: 10%;
+}
+
 h5 {
     letter-spacing: 3px;
 }
@@ -92,6 +96,12 @@ h5 {
 .nutrition {
     align-items: right;
 
+}
+
+.nutritioninfo {
+    text-align: left;
+    font-size: 10px;
+    font-weight: bold;
 }
 
 .history {
@@ -195,6 +205,10 @@ p {
     border-radius: 5px;
 }
 
+.card {
+    border: none;
+}
+
 
 
 
@@ -240,7 +254,7 @@ p {
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
     background-color: rgb(247, 245, 245);
-    overflow:scroll;
+    overflow: scroll;
 
 
 }
@@ -251,5 +265,5 @@ p {
     font-size: 12px;
     text-align: left;
     transform: rotateY(180deg);
-    overflow:scroll;
+    overflow: scroll;
 }
