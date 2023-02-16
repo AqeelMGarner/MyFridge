@@ -1,3 +1,4 @@
+//color randomizer for the letters in the title 
 var colours = ['lightpink', 'cornflowerblue', 'yellow', 'red', 'lightgreen', 'orange', 'magenta', 'purple'];
 
 function randomColour() {
@@ -65,7 +66,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com"
         }
     };
-
+    
     $.ajax(settings).done(function (response) {
         console.log(response);
 
@@ -126,7 +127,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
 
 
-
+        
         const cardBackOne = document.getElementById('cardBackOne');
         cardBackOne.innerHTML = `
         <h2 id="ingredientOne">Ingredients<button class="btn saveBtn">
@@ -232,11 +233,11 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 `;
 
 
-
+        
         let hitsArray = [firstHit, secondHit, thirdHit];
         let imageArray = [imageOne, imageTwo, imageThree];
         let ingredientArray = [ingredientList, ingredientListTwo, ingredientListThree];
-
+        //querySelector for saved recpies 
         const saveBtns = document.querySelectorAll('.saveBtn');
         saveBtns.forEach((btn, index) => {
             btn.addEventListener('click', () => {
@@ -247,7 +248,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
                 btnEl.setAttribute('data-target', '#modal');
                 btnEl.textContent = hitsArray[index];
                 history.appendChild(btnEl);
-
+                // event listener for modals 
                 btnEl.addEventListener('click', () => {
                     const modalTitle = document.getElementById('modalTitle');
                     const modalBody = document.getElementById('modalBody');
@@ -286,12 +287,12 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     })
 });
 
-
+// event listener for the saved recpies 
 window.addEventListener('load', () => {
     const history = document.getElementById('history');
 
     const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
-
+    // display the modals function 
     savedRecipes.forEach(recipeData => {
         const btnEl = document.createElement('button');
         btnEl.classList.add('list-group-item');
@@ -322,7 +323,7 @@ window.addEventListener('load', () => {
 
 
 
-
+// clear button function 
 const clearBtn = document.createElement('button');
 clearBtn.textContent = 'Clear recipes';
 clearBtn.classList.add('list-group-item')

@@ -61,14 +61,14 @@ body {
 
 
 }
-
+/* styling for the text displayed on the cards */
 .card-text {
     font-size: 14px;
     text-align: center;
     letter-spacing: 3px;
     font-family: Arial;
 }
-
+/*styling for the title of the cards*/
 .card-title {
     padding-top: 10%;
 }
@@ -92,7 +92,7 @@ h5 {
     font-family: Arial;
 }
 
-/* display sty */
+/* display styling for nutrition facts */
 .nutrition {
     align-items: right;
 
@@ -103,7 +103,7 @@ h5 {
     font-size: 10px;
     font-weight: bold;
 }
-
+/*display for the history section*/
 .history {
 
     text-align: center;
