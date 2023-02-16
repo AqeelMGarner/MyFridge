@@ -37,11 +37,15 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
             var ingredientInfo = document.getElementById('nutritionFact');
             ingredientInfo.innerHTML = '';
+            var infoHead = document.createElement('h6');
+            infoHead.classList.add('infoHead');
             var infoText = document.createElement('p');
             infoText.classList.add('infoText');
 
-            infoText.textContent = query + ': ' + 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat + 'g' + '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
+            infoHead.textContent = query + ':';
+            infoText.textContent = 'Carbs: ' + carb + 'g, ' + 'Fat: ' + fat + 'g, ' + 'Protein: ' + protein + 'g, ' + 'Calories: ' + calories;
 
+            ingredientInfo.appendChild(infoHead);
             ingredientInfo.appendChild(infoText);
 
 
