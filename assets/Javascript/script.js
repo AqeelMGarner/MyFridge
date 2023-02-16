@@ -91,8 +91,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const ingredientListThree = response.hits[2].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
 
 
-
-
         const cardOne = document.getElementById('cardOne');
         const recipeOne = document.getElementById('recipeOne');
         recipeOne.classList.add('recipeTitle');
