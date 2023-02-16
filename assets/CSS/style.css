@@ -182,7 +182,7 @@ p {
 .flip-card {
     display: inline-flex;
     background-color: transparent;
-    width: 220px;
+    width: 210px;
     height: 400px;
     perspective: 1000px;
     /* Remove this if you don't want the 3D effect */
@@ -218,6 +218,7 @@ p {
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
     background-color: rgb(247, 245, 245);
+    overflow:scroll;
 
 
 }
@@ -228,4 +229,5 @@ p {
     font-size: 12px;
     text-align: left;
     transform: rotateY(180deg);
+    overflow:scroll;
 }
