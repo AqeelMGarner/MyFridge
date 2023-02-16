@@ -28,13 +28,13 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         headers: { 'X-Api-Key': 'p659xQvXDLI/IO+zraCpng==I1MzyWAxQGwYt7w6' },
         contentType: 'application/json',
         success: function (result) {
-
+            //extracts four pieces of nutritional information from the result object
             const carb = result.items[0].carbohydrates_total_g;
             const fat = result.items[0].fat_total_g;
             const calories = result.items[0].calories;
             const protein = result.items[0].protein_g;
             console.log(result);
-
+            //accesses an HTML element on the page with the id "nutritionFact" 
             var ingredientInfo = document.getElementById('nutritionFact');
             ingredientInfo.innerHTML = '';
             var infoText = document.createElement('p');
@@ -66,18 +66,18 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com"
         }
     };
-    
+    //HTTP request to a web server using the jQuery library's
     $.ajax(settings).done(function (response) {
         console.log(response);
-
+        //extracts the names of the top three recipe hits from an API response
         var firstHit = response.hits[0].recipe.label;
         var secondHit = response.hits[1].recipe.label;
         var thirdHit = response.hits[2].recipe.label;
-
+        //extracts the URLs of the images associated with the top three recipe hits from an API response
         var imageOne = response.hits[0].recipe.image;
         var imageTwo = response.hits[1].recipe.image;
         var imageThree = response.hits[2].recipe.image;
-
+        //extracts the nutritional information (carbohydrates, protein, fat, and calories) for the top recipe hit from an API response
         var carbsOne = response.hits[0].recipe.totalNutrients.CHOCDF.quantity;
         var proteinOne = response.hits[0].recipe.totalNutrients.PROCNT.quantity;
         var fatOne = response.hits[0].recipe.totalNutrients.FAT.quantity;
@@ -92,7 +92,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         var proteinThree = response.hits[2].recipe.totalNutrients.PROCNT.quantity;
         var fatThree = response.hits[2].recipe.totalNutrients.FAT.quantity;
         var caloriesThree = response.hits[2].recipe.calories;
-
+        //extracts the ingredient lists for the first three recipe hits from an API response
         const ingredientList = response.hits[0].recipe.ingredientLines.map(ingredient => `${ingredient}`);
         const ingredientListTwo = response.hits[1].recipe.ingredientLines.map(ingredient => `${ingredient}`);
         const ingredientListThree = response.hits[2].recipe.ingredientLines.map(ingredient => `${ingredient}`);
@@ -127,7 +127,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
 
 
-        
+        //HTML content for the back of a recipe card for the first recipe hit returned from the API response
         const cardBackOne = document.getElementById('cardBackOne');
         cardBackOne.innerHTML = `
         <h2 id="ingredientOne">Ingredients<button class="btn saveBtn">
