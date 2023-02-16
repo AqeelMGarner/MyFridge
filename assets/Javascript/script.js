@@ -35,10 +35,11 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             console.log(result);
 
             var ingredientInfo = document.getElementById('nutritionFact');
+            ingredientInfo.innerHTML = '';
             var infoText = document.createElement('p');
             infoText.classList.add('infoText');
 
-            infoText.textContent = query + ': ' + 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat  + 'g'  +  '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
+            infoText.textContent = query + ': ' + 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat + 'g' + '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
 
             ingredientInfo.appendChild(infoText);
 
@@ -115,10 +116,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         //adding nutritionList to the bottom of the cardOne
 
         const nutritionListOne = document.getElementById('nutritionListOne');
-        
-    
-        
-        
+
+
+
+
 
 
 
@@ -128,7 +129,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         <h2 id="ingredientOne">Ingredients<button class="btn saveBtn">
 
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
-        <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>            `;
+        <ul>${ingredientList.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>            `;
 
 
         const cardTwo = document.getElementById('cardTwo')
@@ -152,7 +153,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         <h2 id="ingredientTwo">Ingredients<button class="btn saveBtn">
 
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
-        <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
+        <ul>${ingredientListTwo.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
 
 
         const cardThree = document.getElementById('cardThree')
