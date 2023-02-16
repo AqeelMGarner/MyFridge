@@ -34,10 +34,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             const protein = result.items[0].protein_g;
             console.log(result);
 
-            var ingredientInfo = document.getElementById('nutrition');
-            var infoText = document.createElement('h6');
+            var ingredientInfo = document.getElementById('nutritionFact');
+            var infoText = document.createElement('p');
             infoText.classList.add('infoText');
-            infoText.textContent = 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat  + 'g'  +  '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
+            infoText.textContent = query + ': ' + 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat  + 'g'  +  '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
             ingredientInfo.appendChild(infoText);
 
         },

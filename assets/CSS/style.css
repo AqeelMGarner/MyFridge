@@ -62,11 +62,35 @@ body {
 
 }
 
+.card-text {
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-family: Arial;
+}
+
+h5 {
+    letter-spacing: 3px;
+}
+
+.card-link {
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-family: Arial;
+    color: silver;
+}
+
+.infoText {
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-family: Arial;
+}
 
 
 .nutrition {
     align-items: right;
-
 
 }
 
@@ -171,6 +195,8 @@ p {
     border-radius: 5px;
 }
 
+
+/*FLIP CARDS 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
     display: inline-flex;
