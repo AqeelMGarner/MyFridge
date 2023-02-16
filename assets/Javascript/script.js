@@ -19,7 +19,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     e.preventDefault();
     var query = document.getElementById('placeholderText').value;
 
-//searching the API calorieninjas for the nutritional information of one ingredient.
+    //searching the API calorieninjas for the nutritional information of one ingredient.
 
     $.ajax({
         method: 'GET',
@@ -37,7 +37,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             var ingredientInfo = document.getElementById('nutrition');
             var infoText = document.createElement('h6');
             infoText.classList.add('infoText');
-            infoText.textContent = 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat  + 'g'  +  '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
+            infoText.textContent = 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat + 'g' + '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
             ingredientInfo.appendChild(infoText);
 
         },
@@ -47,7 +47,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     });
 
 
-//searching the API Edamam using key & user input (query)
+    //searching the API Edamam using key & user input (query)
 
     const settings = {
         "async": true,
@@ -102,7 +102,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         img.setAttribute("src", imageOne); //setting the Attribute as src from imageOne
         cardOne.appendChild(img); //appending the image as a child of cardOne
         var existingImgOne = cardOne.querySelector('img');//if there is an image - call it existing Image
-        
+
         if (existingImgOne) {
             cardOne.removeChild(existingImgOne);
         } //What to do if there is an image - take it away
@@ -110,18 +110,15 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         cardOne.appendChild(img); //append new image
 
         //adding nutritionList to the bottom of the cardOne
-        const nutritionListOne = document.getElementById('nutritionListOne');
-        
-       git 
-        
-        nutritionListOne.textContent = "Carbs: " + carbsOne;   
-        
+        //const nutritionListOne = document.getElementById('nutritionListOne');
 
-        cardOne.createElement("li");
-        li.appendChild(nutritionListOne);
+        //nutritionListOne.textContent = "Carbs: " + carbsOne
+
+        //cardOne.createElement("li");
+        //li.appendChild(nutritionListOne);
 
 
-           
+
 
         const cardBackOne = document.getElementById('cardBackOne');
         cardBackOne.innerHTML = `
