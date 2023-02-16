@@ -24,7 +24,9 @@ The usage of applications are as follows. Enter a single ingredient and click se
 Developers who have contributed to the making of this application and their github accounts 
 
 Hoger Shoresh - https://github.com/Hoggi90
+
 Hayley Callender - https://github.com/Songbird1978
+
 Aqeel Garner - https://github.com/AqeelMGarner
 
 ## License
