@@ -110,12 +110,12 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         cardOne.appendChild(img); //append new image
 
         //adding nutritionList to the bottom of the cardOne
-        //const nutritionListOne = document.getElementById('nutritionListOne');
 
-        //nutritionListOne.textContent = "Carbs: " + carbsOne
-
-        //cardOne.createElement("li");
-        //li.appendChild(nutritionListOne);
+        const nutritionListOne = document.getElementById('nutritionListOne');
+        
+    
+        
+        
 
 
 
