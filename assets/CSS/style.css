@@ -92,7 +92,7 @@ h5 {
     font-family: Arial;
 }
 
-
+/* display sty */
 .nutrition {
     align-items: right;
 
@@ -152,7 +152,7 @@ h2 {
 p {
     height: 25%
 }
-
+/* styling for recipe cards*/
 #recipeOne {
     color: rgb(209, 129, 206);
     font-size: 16px;
@@ -170,13 +170,13 @@ p {
 
 
 }
-
+/* styling for the recipe image */
 .imageRecipe {
     width: 100%;
 
 }
 
-
+/*styling for input ingredient text bar*/
 .search {
     width: 100%;
     color: rgb(0, 0, 0);
@@ -186,7 +186,7 @@ p {
     font-family: Arial Rounded MT Bold;
 
 }
-
+/*styling for search button*/
 #searchBtn {
     font-size: 60%;
     color: white;
