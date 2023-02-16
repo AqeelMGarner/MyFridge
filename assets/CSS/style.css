@@ -14,7 +14,7 @@ body {
     text-align: center;
     font-size: 6vw;
     letter-spacing: 3px;
-    margin-top: 30px;
+    margin-top: 60px;
     margin-bottom: 50px;
     font-family: Arial Rounded MT Bold;
     -webkit-text-stroke-color: solid silver;
@@ -30,6 +30,7 @@ body {
     justify-content: center;
     font-family: Arial Rounded MT Bold;
     text-align: center;
+
 }
 
 
@@ -50,6 +51,7 @@ body {
 #clearbtn {
     background-color: rgb(232, 133, 133);
     color: white;
+    width: 60%;
 
 }
 
@@ -72,39 +74,49 @@ body {
 }
 
 .card-title {
-    padding-top: 10%;
-    margin-bottom: 0 !important;
+    padding: 4%;
+    margin: 0 auto;
+    background-color: rgb(232, 133, 133);
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+    font-size: 12px;
+    width: 60%;
+    text-align: center;
 }
 
-.card-link {
-    font-size: 14px;
-    text-align: center;
-    letter-spacing: 3px;
-    font-family: Arial;
-    color: silver;
-}
 
 .infoText {
-    font-size: 16px;
+    margin: 0 auto;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     font-family: Arial;
+    border-radius: 5px;
+    color: rgb(100, 97, 97);
+    width: 60%;
+
 }
 
 
 .infoHead {
+    margin: 0 auto;
     text-transform: capitalize;
     color: rgb(232, 133, 133);
     font-weight: bolder;
     font-size: 18px;
+    border-radius: 5px;
+    width: 60%;
+    margin-bottom: 5px;
+
 }
 
 
 .nutrition {
     text-align: center;
     font-size: 12px;
-    margin-top: 30px;
     font-family: Arial Rounded MT Bold;
+
 
 }
 
@@ -112,7 +124,6 @@ body {
     text-align: center;
     font-size: 12px;
     margin-top: 30px;
-
     font-family: Arial Rounded MT Bold;
 
 }
@@ -211,16 +222,20 @@ p {
     background-color: rgb(232, 133, 133);
     border: none;
     border-radius: 5px;
+    width: 30%;
 
 }
 
 .list-group-item {
+    width: 60%;
+    margin: 0 auto;
     margin-bottom: 15px;
-    width: 100%;
-    background-color: rgb(241, 241, 241);
+    background-color: silver;
     font-size: 12px;
     border: 1px solid white;
+    color: rgb(100, 97, 97);
     border-radius: 5px;
+
 }
 
 .card {
@@ -232,8 +247,11 @@ p {
 
 .card-body {
     padding: 0px !important;
-    margin-left: 15px;
-    margin-right: 15px;
+    background-color: silver !important;
+    width: 60%;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0 auto;
 }
 
 
@@ -295,4 +313,10 @@ p {
     text-align: left;
     transform: rotateY(180deg);
     overflow: scroll;
+}
+
+.footer {
+
+    margin-bottom: 100px;
+
 }
