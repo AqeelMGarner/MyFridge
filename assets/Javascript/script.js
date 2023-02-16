@@ -86,9 +86,9 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         var fatThree = response.hits[2].recipe.totalNutrients.FAT.quantity;
         var caloriesThree = response.hits[2].recipe.calories;
 
-        const ingredientList = response.hits[0].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
-        const ingredientListTwo = response.hits[1].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
-        const ingredientListThree = response.hits[2].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
+        const ingredientList = response.hits[0].recipe.ingredientLines.map(ingredient => `${ingredient}`);
+        const ingredientListTwo = response.hits[1].recipe.ingredientLines.map(ingredient => `${ingredient}`);
+        const ingredientListThree = response.hits[2].recipe.ingredientLines.map(ingredient => `${ingredient}`);
 
 
 
@@ -126,9 +126,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const cardBackOne = document.getElementById('cardBackOne');
         cardBackOne.innerHTML = `
         <h2 id="ingredientOne">Ingredients<button class="btn saveBtn">
+
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
-              <ul>${ingredientList.join('')}</ul>
-            `;
+        <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>            `;
+
 
         const cardTwo = document.getElementById('cardTwo')
         const recipeTwo = document.getElementById('recipeTwo');
@@ -149,9 +150,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const cardBackTwo = document.getElementById('cardBackTwo');
         cardBackTwo.innerHTML = `
         <h2 id="ingredientTwo">Ingredients<button class="btn saveBtn">
+
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
-        <ul>${ingredientListTwo.join('')}</ul>
-      `;
+        <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
+
 
         const cardThree = document.getElementById('cardThree')
         const recipeThree = document.getElementById('recipeThree');
@@ -172,15 +174,17 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const cardBackThree = document.getElementById('cardBackThree');
         cardBackThree.innerHTML = `
       <h2 id="ingredientThree">Ingredients<button class="btn saveBtn">
+
       <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
-      <ul>${ingredientListThree.join('')}</ul>
-      `;
+      <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
 
-        let hitsArray = [firstHit, secondHit, thirdHit]
 
+        let hitsArray = [firstHit, secondHit, thirdHit];
+        let imageArray = [imageOne, imageTwo, imageThree];
+        let ingredientArray = [ingredientList, ingredientListTwo, ingredientListThree];
 
         const saveBtns = document.querySelectorAll('.saveBtn');
-        saveBtns.forEach((btn, index) => { // Add the index parameter to the function
+        saveBtns.forEach((btn, index) => {
             btn.addEventListener('click', () => {
                 const history = document.getElementById('history');
                 const btnEl = document.createElement('button');
@@ -189,16 +193,34 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
                 btnEl.setAttribute('data-target', '#modal');
                 btnEl.textContent = hitsArray[index];
                 history.appendChild(btnEl);
+
                 btnEl.addEventListener('click', () => {
-                    $("#modal").modal('show');
+                    const modalTitle = document.getElementById('modalTitle');
+                    const modalBody = document.getElementById('modalBody');
+                    modalTitle.textContent = recipeData.recipeTitle;
+                    const recipeImg = document.createElement('img');
+                    recipeImg.setAttribute('src', recipeData.recipeImage);
+                    modalBody.innerHTML = '';
+                    modalBody.appendChild(recipeImg);
+                    const ingreList = document.createElement('ul');
+                    recipeData.recipeIngredients.forEach(ingredient => {
+                        const li = document.createElement('li');
+                        li.textContent = ingredient;
+                        ingreList.appendChild(li);
+                    });
+                    modalBody.appendChild(ingreList);
+
                 });
 
                 const recipeData = {
                     recipeTitle: hitsArray[index],
+                    recipeImage: imageArray[index],
+                    recipeIngredients: ingredientArray[index],
 
                 };
 
-                // Retrieve the saved recipe data from local storage and add the new recipe data to it
+
+                // Retrieves the saved recipe data from local storage and add the new recipe data to it
                 const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
                 savedRecipes.push(recipeData);
 
@@ -225,10 +247,27 @@ window.addEventListener('load', () => {
         btnEl.setAttribute('data-target', '#modal');
         history.appendChild(btnEl);
         btnEl.addEventListener('click', () => {
-            $("#modal").modal('show');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            modalTitle.textContent = recipeData.recipeTitle;
+            const recipeImg = document.createElement('img');
+            recipeImg.setAttribute('src', recipeData.recipeImage);
+            modalBody.innerHTML = '';
+            modalBody.appendChild(recipeImg);
+            const ingreList = document.createElement('ul');
+            recipeData.recipeIngredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.textContent = ingredient;
+                ingreList.appendChild(li);
+            });
+            modalBody.appendChild(ingreList);
+
+
         });
     });
 });
+
+
 
 
 const clearBtn = document.createElement('button');
