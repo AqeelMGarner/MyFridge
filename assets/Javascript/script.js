@@ -47,8 +47,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
     });
 
 
-//searching the API Edamam using key & user input (query)
-
     const settings = {
         "async": true,
         "crossDomain": true,
@@ -89,8 +87,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const ingredientList = response.hits[0].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
         const ingredientListTwo = response.hits[1].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
         const ingredientListThree = response.hits[2].recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`);
-
-
 
 
         const cardOne = document.getElementById('cardOne'); //targeting the ID of cardOne
@@ -202,7 +198,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
                 localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
             });
         });
-
 
     })
 });
