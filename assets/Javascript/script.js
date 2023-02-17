@@ -28,7 +28,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         headers: { 'X-Api-Key': 'p659xQvXDLI/IO+zraCpng==0ES11CeaJXk7fr0G' },
         contentType: 'application/json',
         success: function (result) {
-<<<<<<< HEAD
             //extracts four pieces of nutritional information from the result object
             const carb = result.items[0].carbohydrates_total_g;
             const fat = result.items[0].fat_total_g;
@@ -36,16 +35,6 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             const protein = result.items[0].protein_g;
             console.log(result);
             //accesses an HTML element on the page with the id "nutritionFact" 
-=======
-            console.log(result);
-
-
-            const carb = result[0].carbohydrates_total_g;
-            const fat = result[0].fat_total_g;
-            const calories = result[0].calories;
-            const protein = result[0].protein_g;
-
->>>>>>> origin
             var ingredientInfo = document.getElementById('nutritionFact');
             ingredientInfo.innerHTML = '';
             var infoHead = document.createElement('h6');
@@ -87,15 +76,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         var imageOne = response.hits[0].recipe.image;
         var imageTwo = response.hits[1].recipe.image;
         var imageThree = response.hits[2].recipe.image;
-<<<<<<< HEAD
         //extracts the nutritional information (carbohydrates, protein, fat, and calories) for the top recipe hit from an API response
-=======
-
-        var methodOne = response.hits[0].recipe.url;
-        var methodTwo = response.hits[1].recipe.url;
-        var methodThree = response.hits[2].recipe.url;
-
->>>>>>> origin
         var carbsOne = response.hits[0].recipe.totalNutrients.CHOCDF.quantity;
         var proteinOne = response.hits[0].recipe.totalNutrients.PROCNT.quantity;
         var fatOne = response.hits[0].recipe.totalNutrients.FAT.quantity;
