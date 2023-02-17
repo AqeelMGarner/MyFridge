@@ -24,10 +24,11 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
     $.ajax({
         method: 'GET',
-        url: 'https://api.calorieninjas.com/v1/nutrition?query=' + query,
-        headers: { 'X-Api-Key': 'p659xQvXDLI/IO+zraCpng==I1MzyWAxQGwYt7w6' },
+        url: 'https://api.api-ninjas.com/v1/nutrition?query=' + query,
+        headers: { 'X-Api-Key': 'p659xQvXDLI/IO+zraCpng==0ES11CeaJXk7fr0G' },
         contentType: 'application/json',
         success: function (result) {
+<<<<<<< HEAD
             //extracts four pieces of nutritional information from the result object
             const carb = result.items[0].carbohydrates_total_g;
             const fat = result.items[0].fat_total_g;
@@ -35,23 +36,32 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
             const protein = result.items[0].protein_g;
             console.log(result);
             //accesses an HTML element on the page with the id "nutritionFact" 
+=======
+            console.log(result);
+
+
+            const carb = result[0].carbohydrates_total_g;
+            const fat = result[0].fat_total_g;
+            const calories = result[0].calories;
+            const protein = result[0].protein_g;
+
+>>>>>>> origin
             var ingredientInfo = document.getElementById('nutritionFact');
             ingredientInfo.innerHTML = '';
+            var infoHead = document.createElement('h6');
+            infoHead.classList.add('infoHead');
             var infoText = document.createElement('p');
             infoText.classList.add('infoText');
 
-            infoText.textContent = query + ': ' + 'Total Carbs: ' + carb + 'g' + '\n' + 'Total Fat: ' + fat + 'g' + '\n' + 'Total Calories: ' + calories + '\n' + 'Total Protein: ' + protein + 'g';
+            infoHead.textContent = query + ':';
+            infoText.textContent = 'Carbs: ' + carb + 'g,    ' + 'Fat: ' + fat + 'g,     ' + 'Protein: ' + protein + 'g,    ' + 'Calories: ' + calories;
 
+            ingredientInfo.appendChild(infoHead);
             ingredientInfo.appendChild(infoText);
 
+
         },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
-        }
     });
-
-
-
 
     //searching the API Edamam using key & user input (query)
 
@@ -77,7 +87,15 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         var imageOne = response.hits[0].recipe.image;
         var imageTwo = response.hits[1].recipe.image;
         var imageThree = response.hits[2].recipe.image;
+<<<<<<< HEAD
         //extracts the nutritional information (carbohydrates, protein, fat, and calories) for the top recipe hit from an API response
+=======
+
+        var methodOne = response.hits[0].recipe.url;
+        var methodTwo = response.hits[1].recipe.url;
+        var methodThree = response.hits[2].recipe.url;
+
+>>>>>>> origin
         var carbsOne = response.hits[0].recipe.totalNutrients.CHOCDF.quantity;
         var proteinOne = response.hits[0].recipe.totalNutrients.PROCNT.quantity;
         var fatOne = response.hits[0].recipe.totalNutrients.FAT.quantity;
@@ -131,9 +149,9 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         const cardBackOne = document.getElementById('cardBackOne');
         cardBackOne.innerHTML = `
         <h2 id="ingredientOne">Ingredients<button class="btn saveBtn">
-
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
-        <ul>${ingredientList.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>            `;
+        <center><a href=${methodOne}>Method</a></center>
+        <ul>${ingredientList.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>`;
 
         //HTML recipe card for the second recipe hit returned from the API response
         const cardTwo = document.getElementById('cardTwo')
@@ -166,6 +184,7 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
         <h2 id="ingredientTwo">Ingredients<button class="btn saveBtn">
 
         <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
+        <center><a href=${methodTwo}>Method</a></center>
         <ul>${ingredientListTwo.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
 
         //HTML elements that will display the information for the third recipe hit in the search results
@@ -196,11 +215,10 @@ document.getElementById("searchBtn").addEventListener("click", function (e) {
 
         const cardBackThree = document.getElementById('cardBackThree');
         cardBackThree.innerHTML = `
-      <h2 id="ingredientThree">Ingredients<button class="btn saveBtn">
-
-      <i class="fa fa-save" style="font-size:15px;color:white"></i></button>
-
-      <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
+        <h2 id="ingredientThree">Ingredients<button class="btn saveBtn">
+        <i class="fa fa-save" style="font-size:35px;color:white"></i></button></h2>
+        <center><a href=${methodThree}>Method</a></center>
+        <ul>${ingredientListThree.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>      `;
 
         // For cardOne
         nutritionListOne.innerHTML = `

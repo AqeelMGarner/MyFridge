@@ -12,9 +12,9 @@ body {
 .header-1 {
 
     text-align: center;
-    font-size: 3.7vw;
+    font-size: 6vw;
     letter-spacing: 3px;
-    margin-top: 30px;
+    margin-top: 60px;
     margin-bottom: 50px;
     font-family: Arial Rounded MT Bold;
     -webkit-text-stroke-color: solid silver;
@@ -23,13 +23,14 @@ body {
 
 #headerTwo {
     display: block;
+    width: 100%;
     margin-top: 20px;
     margin-bottom: 50px;
-    margin-bottom: 50px;
-    font-size: 2vw;
+    font-size: 30px;
     justify-content: center;
     font-family: Arial Rounded MT Bold;
     text-align: center;
+
 }
 
 
@@ -49,6 +50,9 @@ body {
 
 #clearbtn {
     background-color: rgb(232, 133, 133);
+    color: white;
+    width: 60%;
+
 }
 
 .form {
@@ -70,33 +74,64 @@ body {
 }
 /*styling for the title of the cards*/
 .card-title {
-    padding-top: 10%;
-}
-
-h5 {
-    letter-spacing: 3px;
-}
-
-.card-link {
-    font-size: 14px;
+    padding: 4%;
+    margin: 0 auto;
+    background-color: rgb(232, 133, 133);
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+    font-size: 12px;
+    width: 60%;
     text-align: center;
-    letter-spacing: 3px;
-    font-family: Arial;
-    color: silver;
 }
+
 
 .infoText {
-    font-size: 14px;
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: bold;
     text-align: center;
-    letter-spacing: 3px;
     font-family: Arial;
+    border-radius: 5px;
+    color: rgb(100, 97, 97);
+    width: 60%;
+
 }
+
 
 /* display styling for nutrition facts */
-.nutrition {
-    align-items: right;
+
+
+.infoHead {
+    margin: 0 auto;
+    text-transform: capitalize;
+    color: rgb(232, 133, 133);
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 60%;
+    margin-bottom: 5px;
 
 }
+
+
+
+.nutrition {
+    text-align: center;
+    font-size: 12px;
+    font-family: Arial Rounded MT Bold;
+
+
+}
+
+#nutritionFact {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+    font-family: Arial Rounded MT Bold;
+
+}
+
 
 .nutritioninfo {
     text-align: left;
@@ -113,8 +148,6 @@ h5 {
 
 
 }
-
-
 
 
 #card-container {
@@ -190,23 +223,39 @@ p {
 #searchBtn {
     font-size: 60%;
     color: white;
-    background-color: rgb(180, 39, 39);
+    background-color: rgb(232, 133, 133);
     border: none;
     border-radius: 5px;
+    width: 30%;
 
 }
 
 .list-group-item {
+    width: 60%;
+    margin: 0 auto;
     margin-bottom: 15px;
-    width: 100%;
-    background-color: rgb(241, 241, 241);
+    background-color: silver;
     font-size: 12px;
-    border: 1px solid rgb(136, 135, 135);
+    border: 1px solid white;
+    color: rgb(100, 97, 97);
     border-radius: 5px;
+
 }
 
 .card {
     border: none;
+    width: 100%;
+    background-color: transparent;
+
+}
+
+.card-body {
+    padding: 0px !important;
+    background-color: silver !important;
+    width: 60%;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0 auto;
 }
 
 
@@ -216,11 +265,13 @@ p {
 /*FLIP CARDS 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
-    display: inline-flex;
+    display: flex;
+    justify-content: center !important;
     background-color: transparent;
     width: 210px;
     height: 400px;
     perspective: 1000px;
+    margin: auto;
     /* Remove this if you don't want the 3D effect */
 }
 
@@ -266,4 +317,10 @@ p {
     text-align: left;
     transform: rotateY(180deg);
     overflow: scroll;
+}
+
+.footer {
+
+    margin-bottom: 100px;
+
 }
